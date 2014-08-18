@@ -1,0 +1,1 @@
+<?php $items = MailData::checkformail();  ?><?php echo $items->total; ?>
