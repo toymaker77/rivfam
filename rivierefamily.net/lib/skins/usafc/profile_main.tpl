@@ -13,19 +13,15 @@
 	<td valign="top" align="center">
 		<img src="<?php echo PilotData::getPilotAvatar($pilotcode); ?>" />
 		<br /><br />
-		<img src="<?php echo $userinfo->rankimage ?>" />
+		
 	</td>
 	<td valign="top">
 		<ul style="margin-top: 0px;">
 			<li><strong>Your Pilot ID: </strong> <?php echo $pilotcode; ?></li>
-			<li><strong>Your Rank: </strong><?php echo $userinfo->rank;?></li>
 			<?php
 			if($report)
 			{ ?>
-				<li><strong>Latest Flight: </strong><a 
-						href="<?php echo url('pireps/view/'.$report->pirepid); ?>">
-						<?php echo $report->code . $report->flightnum; ?></a>
-				</li>
+			
 			<?php
 			}
 			?>
@@ -33,17 +29,9 @@
 			<li><strong>Total Flights: </strong><?php echo $userinfo->totalflights?></li>
 			<li><strong>Total Hours: </strong><?php echo $userinfo->totalhours; ?></li>
 			<li><strong>Total Transfer Hours: </strong><?php echo $userinfo->transferhours?></li>
-			<li><strong>Total Money: </strong><?php echo FinanceData::FormatMoney($userinfo->totalpay) ?></li>
+			
 		
-			<?php
-			if($nextrank)
-			{
-			?>
-				<p>You have <?php echo ($nextrank->minhours - $pilot_hours)?> hours 
-					left until your promotion to <?php echo $nextrank->rank?></p>
-			<?php
-			}
-			?>
+			
 		</ul>
 
 	</td>
